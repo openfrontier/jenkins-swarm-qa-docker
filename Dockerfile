@@ -33,7 +33,6 @@ RUN set -ex \
 		libxslt-dev \
                 bzip2 \
                 unzip \
-                zip \
         ' \
         && apt-get update \
         && apt-get install -y --no-install-recommends $buildDeps \
@@ -67,7 +66,7 @@ RUN set -x && curl -sLo /usr/local/bin/jq https://github.com/stedolan/jq/release
 
 # sonar-scanner
 RUN mkdir /opt/sonar-scanner
-RUN set -x && curl -sLo /opt/sonar-scanner/sonar-scanner-${SONAR_SCANNER_VERSION}.zip https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-${SONAR_SCANNER_VERSION}.zip && \
+RUN set -x && curl -sLo /opt/sonar-scanner/sonar-scanner-${SONAR_SCANNER_VERSION}.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-${SONAR_SCANNER_VERSION}.zip && \
     unzip -d /opt/sonar-scanner  /opt/sonar-scanner/sonar-scanner-${SONAR_SCANNER_VERSION}.zip && \
     ln -s /opt/sonar-scanner/sonar-scanner-${SONAR_SCANNER_VERSION}/ /opt/sonar-scanner/default && \
     chown -R jenkins:jenkins /opt/sonar-scanner/sonar-scanner-${SONAR_SCANNER_VERSION}/ && \
