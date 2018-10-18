@@ -32,7 +32,7 @@ RUN set -ex \
 		libxslt-dev \
                 bzip2 \
         ' \
-#        && apt-get update \
+        && apt-get update \
         && apt-get install -y --no-install-recommends $buildDeps \
         && rm -rf /var/lib/apt/lists/*
 
