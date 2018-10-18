@@ -26,11 +26,14 @@ RUN set -ex \
                 cmake \
                 pkg-config \
                 make \
+                libbz2-dev \
                 zlib1g-dev \
                 libyaml-dev \
                 libxml2-dev \
 		libxslt-dev \
                 bzip2 \
+                unzip \
+                zip \
         ' \
         && apt-get update \
         && apt-get install -y --no-install-recommends $buildDeps \
