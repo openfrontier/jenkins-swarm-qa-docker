@@ -1,4 +1,4 @@
-FROM openfrontier/jenkins-swarm-maven-slave:3.4-8u171-jdk
+FROM openfrontier/jenkins-swarm-maven-slave:openjdk
 
 MAINTAINER XJD <xing.jiudong@trans-cosmos.com.cn>
 
