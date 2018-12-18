@@ -75,4 +75,8 @@ RUN set -x && curl -sLo /opt/sonar-scanner/sonar-scanner-${SONAR_SCANNER_VERSION
 ENV SONAR_RUNNER_HOME=/opt/sonar-scanner/default
 ENV PATH $PATH:/opt/sonar-scanner/default/bin
 
+# make /bin/sh symlink to bash instead of dash:
+RUN echo "dash dash/sh boolean false" | debconf-set-selections
+RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
+
 USER "${JENKINS_USER}"
